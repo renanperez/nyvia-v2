@@ -1,0 +1,51 @@
+{
+  "name": "KeywordAgent",
+  "description": "Gera palavras-chave com base em briefing e persona.",
+  "version": "1.0.0",
+  "auth": {
+    "type": "none"
+  },
+  "methods": {
+    "generateKeywords": {
+      "description": "Gera uma lista de palavras-chave com base no briefing e objetivo.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "briefing": {
+            "type": "string",
+            "description": "Resumo do produto ou serviço"
+          },
+          "persona": {
+            "type": "string",
+            "description": "Descrição da persona-alvo"
+          },
+          "objetivo": {
+            "type": "string",
+            "description": "Tipo de palavra-chave desejada (ex: tráfego pago, SEO)"
+          }
+        },
+        "required": ["briefing", "persona"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "categorias": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sugestoes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}   

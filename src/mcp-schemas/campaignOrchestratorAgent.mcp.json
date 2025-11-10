@@ -1,0 +1,67 @@
+{
+  "name": "CampaignOrchestratorAgent",
+  "description": "Cria uma campanha com base em palavras-chave e textos de anúncio, e retorna uma simulação de configuração de mídia.",
+  "version": "1.0.0",
+  "auth": {
+    "type": "none"
+  },
+  "methods": {
+    "createCampaign": {
+      "description": "Gera uma campanha simulada pronta para publicação, com base nos dados de input.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "nome_campanha": {
+            "type": "string",
+            "description": "Nome da campanha a ser criada"
+          },
+          "keywords": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Palavras-chave geradas para compor o público e anúncios"
+          },
+          "ad_copy": {
+            "type": "object",
+            "properties": {
+              "headline": { "type": "string" },
+              "descricao": { "type": "string" }
+            },
+            "required": ["headline", "descricao"]
+          },
+          "plataforma": {
+            "type": "string",
+            "description": "Destino da campanha (ex: Meta Ads, Google Ads, TikTok)"
+          },
+          "orcamento_diario": {
+            "type": "number",
+            "description": "Valor diário previsto para investimento"
+          }
+        },
+        "required": ["keywords", "ad_copy", "plataforma", "orcamento_diario"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "campaign_id": {
+            "type": "string",
+            "description": "Identificador único da campanha (UUID ou slug)"
+          },
+          "plataforma": {
+            "type": "string"
+          },
+          "orcamento_diario": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status atual da campanha (ex: configurada, publicada, erro)"
+          },
+          "resumo": {
+            "type": "string",
+            "description": "Resumo em linguagem natural da campanha"
+          }
+        }
+      }
+    }
+  }
+}

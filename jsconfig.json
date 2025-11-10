@@ -1,0 +1,21 @@
+{ 
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+
+  "include": ["next-env.d.ts", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
+// This file is required by Next.js to configure the JavaScript environment
+// and to provide type definitions for the project.
+// It specifies the base URL and path mappings for module resolution.
+// The `include` array specifies the files to be included in the project,
+// while the `exclude` array specifies directories to be ignored.
+// This configuration helps in resolving imports and improving the development experience.
+// It is particularly useful for TypeScript projects, but can also be used with JavaScript.
+// The `baseUrl` is set to the current directory, allowing for relative imports.
+// The `paths` option allows for aliasing directories, making imports cleaner and more manageable.
+// The `include` and `exclude` options help in controlling which files are part of the project,

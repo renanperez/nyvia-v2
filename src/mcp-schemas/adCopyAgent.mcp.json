@@ -1,0 +1,54 @@
+{
+  "name": "AdCopyAgent",
+  "description": "Gera textos de anúncios (ad copies) com base em palavras-chave e público-alvo.",
+  "version": "1.0.0",
+  "auth": {
+    "type": "none"
+  },
+  "methods": {
+    "generateAdCopy": {
+      "description": "Gera headline e descrição para um anúncio com base em palavras-chave e objetivo da campanha.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Palavras-chave relevantes para o anúncio"
+          },
+          "publico_alvo": {
+            "type": "string",
+            "description": "Descrição da persona ou público-alvo"
+          },
+          "objetivo": {
+            "type": "string",
+            "description": "Objetivo da campanha (ex: conversão, alcance, tráfego)"
+          }
+        },
+        "required": ["keywords", "publico_alvo"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "headline": {
+            "type": "string",
+            "description": "Título principal do anúncio"
+          },
+          "descricao": {
+            "type": "string",
+            "description": "Texto complementar do anúncio"
+          },
+          "variacoes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Variações alternativas do anúncio"
+          }
+        }
+      }
+    }
+  }
+}

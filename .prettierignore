@@ -1,0 +1,11 @@
+node_modules
+.next
+dist
+out
+coverage
+public/**/*.min.*
+**/*.min.js
+**/*.min.css
+ci-logs
+package-lock.json
+src/mcp-schemas/*.json

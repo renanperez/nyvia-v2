@@ -1,0 +1,50 @@
+{
+  "name": "PerformanceDashboardAgent",
+  "description": "Consulta dados de performance de campanhas e retorna KPIs dinâmicos.",
+  "version": "1.1.0",
+  "auth": {
+    "type": "none"
+  },
+  "methods": {
+    "getCampaignMetrics": {
+      "description": "Retorna métricas de performance para uma campanha específica.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "campaign_id": {
+            "type": "string",
+            "description": "ID único da campanha para consulta de dados"
+          },
+          "kpis_desejados": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Lista opcional de KPIs a serem retornados (ex: cliques, ROAS, conversões)"
+          }
+        },
+        "required": ["campaign_id"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "kpis": {
+            "type": "object",
+            "description": "Mapa dinâmico de nome do KPI → valor numérico",
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "status": {
+            "type": "string",
+            "description": "Status da campanha (ex: ativa, pausada, finalizada)"
+          },
+          "ult_atualizacao": {
+            "type": "string",
+            "description": "Data/hora da última atualização de dados (ISO 8601)"
+          }
+        }
+      }
+    }
+  }
+}

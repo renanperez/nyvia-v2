@@ -1,0 +1,102 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+# Environment files - ignore all, except the example
+.env.local
+.env.staging
+.env.production
+.env.development
+.env.test
+.env*
+!.env.local.example
+
+# Ignore environment variable files - “Ignore all .env* files, except .env.local.example.”
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Ignore old or backup README files
+README.old.md
+*.backup.md     
+*.bak
+
+# Logs and runtime folders
+logs/
+*.log
+*.agentlog
+*.trace
+*.runlog
+
+# AI-generated artifacts
+*.jsonl
+*.csv
+*.sqlite
+*.db
+
+# Editor and local junk (if not already ignored)
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+
+
+# Keep Next.js API route folder named 'logs'
+!src/app/api/logs/
+!src/app/api/logs/**
+# ---- Repo hygiene (relatórios e temporários) ----
+# Relatórios locais de diagnóstico
+GIT_*.txt
+
+# Dumps locais/experimentos
+*pretty*.json
+logs_*.json
+
+# Arquivos digitados por engano/linhas de comando coladas
+tamp*
+*tatus*
+*(20251029-212144)*
+
+# Pastas de build/cache comuns (garantia)
+.next/
+.turbo/
+dist/
+coverage/
+*.log
+
+/src/generated/prisma

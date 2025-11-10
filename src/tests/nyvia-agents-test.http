@@ -1,0 +1,46 @@
+###########################################################
+### Nyvia Agents - Testes de API
+### Arquivo: src/tests/nyvia-agents-test.http
+### Objetivo: Testar todos os agentes com os mesmos parâmetros
+### Observação: Rodar com servidor local ativo em http://localhost:3000
+###########################################################
+
+### Teste Keywords Agent
+POST http://localhost:3000/api/keywords
+Content-Type: application/json
+
+{
+  "briefing": "Curso online de inglês para iniciantes",
+  "persona": "Adultos 25-40 interessados em aprender inglês rápido",
+  "objetivo": "Gerar leads qualificados para o curso"
+}
+
+### Teste AdCopy Agent
+POST http://localhost:3000/api/ad-copy
+Content-Type: application/json
+
+{
+  "briefing": "Curso online de inglês para iniciantes",
+  "persona": "Adultos 25-40 interessados em aprender inglês rápido",
+  "objetivo": "Gerar leads qualificados para o curso"
+}
+
+### Teste Performance Dashboard Agent
+POST http://localhost:3000/api/performance-dashboard
+Content-Type: application/json
+
+{
+  "briefing": "Curso online de inglês para iniciantes",
+  "persona": "Adultos 25-40 interessados em aprender inglês rápido",
+  "objetivo": "Gerar leads qualificados para o curso"
+}
+
+### Teste Coordinator Agent
+POST http://localhost:3000/api/coordinator
+Content-Type: application/json
+
+{
+  "briefing": "Curso online de inglês para iniciantes",
+  "persona": "Adultos 25-40 interessados em aprender inglês rápido",
+  "objetivo": "Gerar leads qualificados para o curso"
+}
