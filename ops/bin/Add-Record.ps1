@@ -1,10 +1,10 @@
 <#
 .SYNOPSIS
-  Automatiza a criação e versionamento de registros Nyvia-v2.
+  Cria e versiona automaticamente registros Nyvia-v2.
 .DESCRIPTION
-  Cria um arquivo .md em ops/records/nyvia-v2, grava o conteúdo, faz commit e push automaticamente.
+  Gera arquivos .md dentro de ops/records, adiciona, commita e faz push.
 .PARAMETER Name
-  Nome do arquivo de registro, sem extensão (ex: 2025-11-11-validacao-local)
+  Nome do arquivo (sem extensão .md).
 .PARAMETER Content
   Conteúdo completo do registro em Markdown.
 .EXAMPLE
@@ -19,19 +19,20 @@ param(
   [string]$Content
 )
 
-$RecordDir = "ops\records\nyvia-v2"
+$RecordDir = "ops\records"
 $FilePath  = "$RecordDir\$Name.md"
 
-# Garante que o diretório exista
+# Garante que a pasta exista
 if (-not (Test-Path $RecordDir)) {
   New-Item -ItemType Directory -Path $RecordDir -Force | Out-Null
 }
 
-# Cria o arquivo e grava o conteúdo
+# Cria e grava o arquivo
 Set-Content -Path $FilePath -Value $Content -Encoding UTF8 -Force
 
-# Versiona automaticamente
+# Versiona e envia
 git add $FilePath
 git commit -m "Registro automático - $Name"
 git push origin main
+
 Write-Host "`n✅ Registro criado e enviado com sucesso:`n $FilePath"
